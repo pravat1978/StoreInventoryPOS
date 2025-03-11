@@ -121,7 +121,7 @@ const ReceiptGenerator: React.FC<ReceiptGeneratorProps> = ({
                     x{item.quantity}
                   </span>
                 </div>
-                <span>${(item.price * item.quantity).toFixed(2)}</span>
+                <span>₹{(item.price * item.quantity).toFixed(2)}</span>
               </div>
             ))}
           </div>
@@ -129,15 +129,15 @@ const ReceiptGenerator: React.FC<ReceiptGeneratorProps> = ({
           <div className="space-y-1">
             <div className="flex justify-between text-sm">
               <span>Subtotal:</span>
-              <span>${receiptData.subtotal.toFixed(2)}</span>
+              <span>₹{receiptData.subtotal.toFixed(2)}</span>
             </div>
             <div className="flex justify-between text-sm">
               <span>Tax:</span>
-              <span>${receiptData.tax.toFixed(2)}</span>
+              <span>₹{receiptData.tax.toFixed(2)}</span>
             </div>
             <div className="flex justify-between font-bold mt-2">
               <span>Total:</span>
-              <span>${receiptData.total.toFixed(2)}</span>
+              <span>₹{receiptData.total.toFixed(2)}</span>
             </div>
           </div>
 

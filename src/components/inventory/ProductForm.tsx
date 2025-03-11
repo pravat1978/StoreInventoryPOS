@@ -27,6 +27,7 @@ const productSchema = z.object({
   name: z.string().min(2, { message: "Product name is required" }),
   sku: z.string().min(2, { message: "SKU is required" }),
   category: z.enum(["apparel", "craft"]),
+  description: z.string().optional(),
   price: z.coerce
     .number()
     .min(0.01, { message: "Price must be greater than 0" }),
@@ -37,6 +38,8 @@ const productSchema = z.object({
   lowStockThreshold: z.coerce
     .number()
     .min(1, { message: "Threshold must be at least 1" }),
+  purchaseDate: z.string().optional(),
+  purchaseQuantity: z.coerce.number().min(0).optional(),
   size: z.string().optional(),
   color: z.string().optional(),
   type: z.string().optional(),
@@ -69,10 +72,14 @@ const ProductForm = ({
     name: product?.name || "",
     sku: product?.sku || "",
     category: product?.category || "apparel",
+    description: product?.description || "",
     price: product?.price || 0,
     cost: product?.cost || 0,
     stockLevel: product?.stockLevel || 0,
     lowStockThreshold: product?.lowStockThreshold || 5,
+    purchaseDate:
+      product?.purchaseDate || new Date().toISOString().split("T")[0],
+    purchaseQuantity: product?.purchaseQuantity || 0,
     size: product?.attributes.size || "",
     color: product?.attributes.color || "",
     type: product?.attributes.type || "",
@@ -120,6 +127,24 @@ const ProductForm = ({
                   <FormLabel>SKU</FormLabel>
                   <FormControl>
                     <Input placeholder="Enter SKU" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="description"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Product Description</FormLabel>
+                  <FormControl>
+                    <Textarea
+                      placeholder="Enter product description"
+                      className="min-h-[80px]"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -221,7 +246,7 @@ const ProductForm = ({
                 name="price"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Price ($)</FormLabel>
+                    <FormLabel>Price (₹)</FormLabel>
                     <FormControl>
                       <Input
                         type="number"
@@ -240,7 +265,7 @@ const ProductForm = ({
                 name="cost"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Cost ($)</FormLabel>
+                    <FormLabel>Cost (₹)</FormLabel>
                     <FormControl>
                       <Input
                         type="number"
@@ -278,6 +303,36 @@ const ProductForm = ({
                     <FormLabel>Low Stock Threshold</FormLabel>
                     <FormControl>
                       <Input type="number" placeholder="5" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <FormField
+                control={form.control}
+                name="purchaseDate"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Purchase Date</FormLabel>
+                    <FormControl>
+                      <Input type="date" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="purchaseQuantity"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Purchase Quantity</FormLabel>
+                    <FormControl>
+                      <Input type="number" placeholder="0" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

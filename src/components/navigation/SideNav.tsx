@@ -18,6 +18,8 @@ import {
   LogOut,
   Users,
   BarChart3,
+  GraduationCap,
+  Database,
 } from "lucide-react";
 
 interface NavItem {
@@ -52,10 +54,22 @@ const SideNav: React.FC<SideNavProps> = ({
       tooltip: "View dashboard",
     },
     {
+      label: "Onboarding",
+      icon: <GraduationCap size={20} />,
+      href: "/onboarding",
+      tooltip: "Staff onboarding",
+    },
+    {
       label: "Inventory",
       icon: <Package size={20} />,
       href: "/inventory",
       tooltip: "Manage inventory",
+    },
+    {
+      label: "Master Data",
+      icon: <Database size={20} />,
+      href: "/masterdata",
+      tooltip: "Manage master data",
     },
     {
       label: "POS",

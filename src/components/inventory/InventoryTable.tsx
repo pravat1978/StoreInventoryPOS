@@ -23,10 +23,13 @@ export interface Product {
   name: string;
   sku: string;
   category: "apparel" | "craft";
+  description?: string;
   price: number;
   cost: number;
   stockLevel: number;
   lowStockThreshold: number;
+  purchaseDate?: string;
+  purchaseQuantity?: number;
   attributes: {
     size?: string;
     color?: string;
@@ -197,7 +200,7 @@ const InventoryTable = ({
                   </TableCell>
                   <TableCell>{getAttributeText(product)}</TableCell>
                   <TableCell className="text-right">
-                    ${product.price.toFixed(2)}
+                    ₹{product.price.toFixed(2)}
                   </TableCell>
                   <TableCell className="text-right">
                     {product.stockLevel}

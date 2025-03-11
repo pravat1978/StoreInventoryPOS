@@ -149,7 +149,7 @@ const CheckoutPanel = ({
             {parseFloat(cashAmount) > total && (
               <div className="p-3 bg-muted rounded-md">
                 <p className="text-sm font-medium">
-                  Change Due: ${(parseFloat(cashAmount) - total).toFixed(2)}
+                  Change Due: ₹{(parseFloat(cashAmount) - total).toFixed(2)}
                 </p>
               </div>
             )}
@@ -186,21 +186,21 @@ const CheckoutPanel = ({
           <h3 className="text-sm font-medium">Order Summary</h3>
           <div className="flex justify-between text-sm">
             <span>Subtotal</span>
-            <span>${subtotal.toFixed(2)}</span>
+            <span>₹{subtotal.toFixed(2)}</span>
           </div>
           {discountAmount > 0 && (
             <div className="flex justify-between text-sm text-green-600">
               <span>Discount</span>
-              <span>-${discountAmount.toFixed(2)}</span>
+              <span>-₹{discountAmount.toFixed(2)}</span>
             </div>
           )}
           <div className="flex justify-between text-sm">
             <span>Tax</span>
-            <span>${tax.toFixed(2)}</span>
+            <span>₹{tax.toFixed(2)}</span>
           </div>
           <div className="flex justify-between font-bold pt-2 border-t">
             <span>Total</span>
-            <span>${total.toFixed(2)}</span>
+            <span>₹{total.toFixed(2)}</span>
           </div>
         </div>
 

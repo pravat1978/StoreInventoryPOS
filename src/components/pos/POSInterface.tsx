@@ -162,7 +162,7 @@ const POSInterface = ({
                               <h3 className="font-medium">{product.name}</h3>
                               <div className="flex justify-between items-center mt-2">
                                 <span className="font-bold">
-                                  ${product.price.toFixed(2)}
+                                  ₹{product.price.toFixed(2)}
                                 </span>
                                 <Button size="sm" variant="ghost">
                                   <ShoppingBag className="h-4 w-4 mr-1" /> Add

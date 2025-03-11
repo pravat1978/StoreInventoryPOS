@@ -78,11 +78,11 @@ interface MetricsPanelProps {
 }
 
 const MetricsPanel = ({
-  dailySales = "$2,450",
+  dailySales = "₹2,450",
   totalInventory = "1,234",
   profitMargin = "32%",
   salesGrowth = 12.5,
-  inventoryValue = "$45,670",
+  inventoryValue = "₹45,670",
 }: MetricsPanelProps) => {
   const metrics = [
     {

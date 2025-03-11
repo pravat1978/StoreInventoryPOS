@@ -1,5 +1,5 @@
-import { lazy } from "react";
 import { RouteObject } from "react-router-dom";
+import { lazy } from "react";
 
 // Lazy load components
 const LoginForm = lazy(() => import("./components/auth/LoginForm"));
@@ -12,6 +12,12 @@ const CashierDashboard = lazy(
 const POSInterface = lazy(() => import("./components/pos/POSInterface"));
 const InventoryPage = lazy(
   () => import("./components/inventory/InventoryPage"),
+);
+const OnboardingPage = lazy(
+  () => import("./components/onboarding/OnboardingPage"),
+);
+const MasterDataPage = lazy(
+  () => import("./components/masterdata/MasterDataPage"),
 );
 
 const routes: RouteObject[] = [
@@ -38,6 +44,14 @@ const routes: RouteObject[] = [
   {
     path: "/inventory",
     element: <InventoryPage />,
+  },
+  {
+    path: "/onboarding",
+    element: <OnboardingPage />,
+  },
+  {
+    path: "/masterdata",
+    element: <MasterDataPage />,
   },
 ];
 

@@ -130,20 +130,20 @@ const ProductDetails = ({
                   <h4 className="text-sm font-medium text-muted-foreground">
                     Price
                   </h4>
-                  <p className="font-medium">${product.price.toFixed(2)}</p>
+                  <p className="font-medium">₹{product.price.toFixed(2)}</p>
                 </div>
                 <div>
                   <h4 className="text-sm font-medium text-muted-foreground">
                     Cost
                   </h4>
-                  <p>${product.cost.toFixed(2)}</p>
+                  <p>₹{product.cost.toFixed(2)}</p>
                 </div>
                 <div>
                   <h4 className="text-sm font-medium text-muted-foreground">
                     Profit
                   </h4>
                   <p className="text-green-600">
-                    ${profit} ({marginPercent}%)
+                    ₹{profit} ({marginPercent}%)
                   </p>
                 </div>
               </div>

@@ -143,7 +143,7 @@ const ShoppingCart = ({
                       )}
                     </div>
                     <p className="mt-1 text-sm font-semibold">
-                      ${item.price.toFixed(2)}
+                      ₹{item.price.toFixed(2)}
                     </p>
                   </div>
 
@@ -202,15 +202,15 @@ const ShoppingCart = ({
         <div className="w-full space-y-2">
           <div className="flex justify-between text-sm">
             <span>Subtotal</span>
-            <span>${subtotal.toFixed(2)}</span>
+            <span>₹{subtotal.toFixed(2)}</span>
           </div>
           <div className="flex justify-between text-sm">
             <span>Tax (8%)</span>
-            <span>${tax.toFixed(2)}</span>
+            <span>₹{tax.toFixed(2)}</span>
           </div>
           <div className="flex justify-between font-bold pt-2 border-t">
             <span>Total</span>
-            <span>${total.toFixed(2)}</span>
+            <span>₹{total.toFixed(2)}</span>
           </div>
         </div>
 

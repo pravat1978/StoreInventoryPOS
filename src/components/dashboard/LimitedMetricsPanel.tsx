@@ -13,7 +13,7 @@ interface MetricCardProps {
 
 const MetricCard = ({
   title = "Metric",
-  value = "$0",
+  value = "₹0",
   description = "No data available",
   icon = <DollarSign className="h-5 w-5 text-muted-foreground" />,
   trend = "",
@@ -57,8 +57,8 @@ interface LimitedMetricsPanelProps {
 }
 
 const LimitedMetricsPanel = ({
-  dailySales = "$1,245.89",
-  salesGoal = "$2,000.00",
+  dailySales = "₹1,245.89",
+  salesGoal = "₹2,000.00",
   customerCount = "37",
   activePromotions = "3",
 }: LimitedMetricsPanelProps) => {

@@ -19,8 +19,8 @@ interface CashierDashboardProps {
 
 const CashierDashboard = ({
   userName = "Sarah Johnson",
-  dailySales = "$1,245.89",
-  salesGoal = "$2,000.00",
+  dailySales = "₹1,245.89",
+  salesGoal = "₹2,000.00",
   customerCount = "37",
   activePromotions = "3",
   upcomingShift = "Tomorrow, 9:00 AM - 5:00 PM",
@@ -155,28 +155,28 @@ const CashierDashboard = ({
                       <td className="py-3 px-4">#TRX-2023-1089</td>
                       <td className="py-3 px-4">10:32 AM</td>
                       <td className="py-3 px-4">4 items</td>
-                      <td className="py-3 px-4 font-medium">$78.50</td>
+                      <td className="py-3 px-4 font-medium">₹78.50</td>
                       <td className="py-3 px-4">Credit Card</td>
                     </tr>
                     <tr className="border-b hover:bg-gray-50">
                       <td className="py-3 px-4">#TRX-2023-1088</td>
                       <td className="py-3 px-4">9:45 AM</td>
                       <td className="py-3 px-4">2 items</td>
-                      <td className="py-3 px-4 font-medium">$45.99</td>
+                      <td className="py-3 px-4 font-medium">₹45.99</td>
                       <td className="py-3 px-4">Cash</td>
                     </tr>
                     <tr className="border-b hover:bg-gray-50">
                       <td className="py-3 px-4">#TRX-2023-1087</td>
                       <td className="py-3 px-4">9:15 AM</td>
                       <td className="py-3 px-4">6 items</td>
-                      <td className="py-3 px-4 font-medium">$124.75</td>
+                      <td className="py-3 px-4 font-medium">₹124.75</td>
                       <td className="py-3 px-4">Digital Wallet</td>
                     </tr>
                     <tr className="hover:bg-gray-50">
                       <td className="py-3 px-4">#TRX-2023-1086</td>
                       <td className="py-3 px-4">Yesterday</td>
                       <td className="py-3 px-4">3 items</td>
-                      <td className="py-3 px-4 font-medium">$67.25</td>
+                      <td className="py-3 px-4 font-medium">₹67.25</td>
                       <td className="py-3 px-4">Credit Card</td>
                     </tr>
                   </tbody>
